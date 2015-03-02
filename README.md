@@ -16,26 +16,26 @@ This gem supports
  * Flights API ( http://support.travelpayouts.com/hc/ru/articles/203956173 )
  * Hotels API ( http://support.travelpayouts.com/hc/ru/articles/203956133 )
 
- ## How to use
+## How to use
 
- Include it in your `Gemfile`:
+Include it in your `Gemfile`:
 
- ```ruby
- gem 'travelpayouts_api'
- ```
+```ruby
+gem 'travelpayouts_api'
+```
 
- Create an initializer in config/initializers:
+Create an initializer in config/initializers:
 
- ```ruby
- # config/initializers/travelpayouts_api.rb
- TravelPayouts.configure do |config|
-   config.token = '<token>'
-   config.marker = '<marker>'
-   config.host = 'localhost'
-   config.currency = 'rub'
-   config.locale = 'en'
- end
- ```
+```ruby
+# config/initializers/travelpayouts_api.rb
+TravelPayouts.configure do |config|
+  config.token = '<token>'
+  config.marker = '<marker>'
+  config.host = 'localhost'
+  config.currency = 'rub'
+  config.locale = 'en'
+end
+```
 
 where
 
