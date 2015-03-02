@@ -1,0 +1,38 @@
+{
+   "success": true,
+   "data": {
+      "2015-06-01": {
+         "origin": "MOW",
+         "destination": "BCN",
+         "price": 12449,
+         "transfers": 1,
+         "airline": "PS",
+         "flight_number": 576,
+         "departure_at": "2015-06-01T06:35:00Z",
+         "return_at": "2015-07-01T13:30:00Z",
+         "expires_at": "2015-01-07T12:34:14Z"
+      },
+      "2015-06-02": {
+         "origin": "MOW",
+         "destination": "BCN",
+         "price": 13025,
+         "transfers": 1,
+         "airline": "PS",
+         "flight_number": 578,
+         "departure_at": "2015-06-02T17:00:00Z",
+         "return_at": "2015-06-11T13:30:00Z",
+         "expires_at": "2015-01-06T17:15:47Z"
+      },
+     "2015-06-30": {
+         "origin": "MOW",
+         "destination": "BCN",
+         "price": 13025,
+         "transfers": 1,
+         "airline": "PS",
+         "flight_number": 578,
+         "departure_at": "2015-06-30T17:00:00Z",
+         "return_at": "2015-07-23T13:30:00Z",
+         "expires_at": "2015-01-07T20:15:34Z"
+      }
+   }
+}

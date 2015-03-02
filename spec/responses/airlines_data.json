@@ -1,0 +1,18 @@
+[{
+"name":"Private flight",
+"alias":null,
+"iata":null,
+"icao":null,
+"callsign":null,
+"country":null,
+"is_active":true
+},
+{
+"name":"135 Airways",
+"alias":null,
+"iata":null,
+"icao":"GNL",
+"callsign":"GENERAL",
+"country":"United States",
+"is_active":false
+}]

@@ -1,0 +1,17 @@
+{
+   "success": true,
+   "data": {
+      "MOW-BKK": 187491,
+      "MOW-BCN": 113764,
+      "MOW-PAR": 91889,
+      "MOW-NYC": 77417,
+      "MOW-PRG": 71449,
+      "MOW-ROM": 67190,
+      "MOW-TLV": 62132,
+      "MOW-HKT": 58549,
+      "MOW-GOI": 47341,
+      "MOW-IST": 45553
+   },
+   "error": null,
+   "currency":"rub"
+}

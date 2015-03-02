@@ -1,0 +1,27 @@
+[{
+"show_to_affiliates":false,
+"trip_class":0,
+"destination":"PSA",
+"depart_date":"2014-05-30",
+"return_date":"2014-06-12",
+"number_of_changes":0,
+"value":43785,
+"created_at": 1407716354,
+"ttl": 1407889154,
+"distance":2247,
+"actual":false
+},
+{
+"show_to_affiliates":false,
+"trip_class":0,
+"destination":"PRG",
+"depart_date":"2014-03-01",
+"return_date":"2014-03-15",
+"number_of_changes":0,
+"value":12060,
+"created_at": 1407716354,
+"ttl": 1407889154,
+"distance":1485,
+"actual":true
+}
+]

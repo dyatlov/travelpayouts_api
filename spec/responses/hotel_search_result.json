@@ -1,0 +1,43 @@
+{
+"status":"ok",
+"result":[
+ {
+ "fullUrl":"http://search.hotellook.com/?language=ru&marker=16886&hotelId=362691",
+ "maxPricePerNight":46,
+ "maxPrice":138,
+ "photoCount":50,
+ "guestScore":63,
+ "address":"23/8 Soi Hub-Aik, Phuket Road, Muang District",
+ "minPriceTotal":40,
+ "id":362691,
+ "price":13,
+ "name":"Rome Place Hotel",
+ "url":"/search/?marker=16886&hotelId=362691",
+ "popularity":47,
+ "location":{
+   "lon":98.39146,
+   "lat":7.878922
+ },
+ "stars":3,
+ "distance":10.6,
+ "amenities":[],
+ "rooms":[
+ {"bookingURL":"/r/?language=ru&checkIn=2015-06-10¤cy=USD&children=5&host=v2%3A16886&marker=16886&transparent=1&roomId=0&adults=2&locationId=30553&checkOut=2015-06-13&gateId=43&hotelId=362691",
+ "options":{
+ "available":5,
+ "deposit":true,
+ "refundable":false,
+ "breakfast":false
+ },
+ "type":"",
+ "tax":0,
+ "desc":"Double or Twin STANDARD",
+ "fullBookingURL":"http://search.hotellook.com/r?language=ru&checkIn=2015-06-10&cy=USD&children=5&host=v2%3A16886&marker=16886&transparent=1&roomId=0&adults=2&locationId=30553&checkOut=2015-06-13&gateId=43&hotelId=362691",
+ "agencyName":"Travel.ru",
+ "agencyId":"43",
+ "total":40,
+ "price":13,
+ "internalTypeId":"1"
+ }],
+ "rating":63
+}]}

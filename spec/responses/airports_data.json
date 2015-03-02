@@ -1,0 +1,20 @@
+[{
+"code":"MQP",
+"name":"Kruger Mpumalanga International Airport",
+"coordinates":{
+"lon":31.098131,
+"lat":-25.384947
+},
+"time_zone":"Africa/Johannesburg",
+"name_translations":{
+"de":"Nelspruit",
+"en":"Kruger Mpumalanga International Airport",
+"tr":"International Airport",
+"it":"Kruger Mpumalanga",
+"fr":"Kruger Mpumalanga",
+"es":"Kruger Mpumalanga",
+"th":"สนามบินเนลสปรุต"
+},
+"country_code":"ZA",
+"city_code":"NLP"
+}]

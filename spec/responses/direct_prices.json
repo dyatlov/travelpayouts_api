@@ -1,0 +1,15 @@
+{
+   "success": true,
+   "data": {
+      "LED": {
+         "0": {
+            "price": 4363,
+            "airline": "UT",
+            "flight_number": 369,
+            "departure_at": "2015-06-27T11:35:00Z",
+            "return_at": "2015-07-04T16:00:00Z",
+            "expires_at": "2015-01-08T20:21:46Z"
+         }
+      }
+   }
+}

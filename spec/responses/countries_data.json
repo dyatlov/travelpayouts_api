@@ -1,0 +1,31 @@
+[{
+"code":"NC",
+"name":"New Caledonia",
+"currency":"XPF",
+"name_translations":{
+"de":"Neukaledonien",
+"en":"New Caledonia",
+"zh-CN":"新喀里多尼亚",
+"tr":"Yeni Kaledonya",
+"ru":"Новая Каледония",
+"fr":"Nouvelle-Calédonie",
+"es":"Nueva Caledonia",
+"it":"Nuova Caledonia",
+"th":"ประเทศนิวแคลิโดเนีย"
+}},
+{
+"code":"MT",
+"name":"Malta",
+"currency":"EUR",
+"name_translations":{
+"de":"Malta",
+"en":"Malta",
+"zh-CN":"马耳他",
+"tr":"Malta",
+"ru":"Мальта",
+"fr":"Malte",
+"es":"Malta",
+"it":"Malta",
+"th":"ประเทศมอลตา"
+}}
+]

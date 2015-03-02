@@ -1,0 +1,22 @@
+{
+"origin":{
+    "iata":"LED",
+    "name":"Санкт-Петербург",
+    "country":"RU",
+    "coordinates":[30.315785,59.939039]
+    },
+"directions":[{
+    "direct":false,
+    "iata":"AAL",
+    "name":"Ольборг",
+    "country":"DK",
+    "coordinates":[9.917771,57.028811]
+    },
+    {
+    "direct":true,
+    "iata":"AAQ",
+    "name":"Анапа",
+    "country":"RU",
+    "coordinates":[37.316666,44.9]
+    }
+]}
