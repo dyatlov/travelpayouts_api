@@ -117,6 +117,12 @@ map_of_prices(origin_iata:, period: :month, one_way: true, direct: false,
     min_trip_duration_in_days: nil, max_trip_duration_in_days: nil)
 ```
 
+## Calendar API
+
+```ruby
+calendar_of_prices(origin:, destination:, depart_date:, one_way:true)
+```
+
 ## Flights API
 
 ```ruby
