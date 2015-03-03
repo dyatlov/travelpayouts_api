@@ -1,4 +1,4 @@
-# TravelPayouts API
+# Aviasales/TravelPayouts API gem
 
 [![Gem Version](http://img.shields.io/gem/v/travelpayouts_api.svg)][gem]
 
