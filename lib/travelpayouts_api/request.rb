@@ -5,18 +5,12 @@ module TravelPayouts
       require 'hashie/mash'
 
       def request(url, params, skip_parse: false)
-        token = config.token
         params[:currency] ||= config.currency
-        params[:locale] ||= config.locale
+        params[:locale]   ||= config.locale
 
         params.delete_if{ |_, v| v == nil }
 
-        headers  = {
-          x_access_token: token,
-          accept_encoding: 'gzip, deflate',
-          accept: :json
-        }
-        data = RestClient.get url, headers.merge(params: params)
+        data = RestClient.get url, request_headers.merge(params: params)
         skip_parse ? data : respond(data)
       rescue RestClient::Exception => e
         err = Error.new(e.response, e.http_code)
@@ -25,58 +19,28 @@ module TravelPayouts
       end
 
       def signed_flight_request(method, url, params)
-        token = config.token
-        params[:marker] = config.marker
-        params[:host] = config.host
+        params[:marker]   = config.marker
+        params[:host]     = config.host
         params[:currency] ||= config.currency
-        params[:locale] ||= config.locale if params.has_key?(:locale)
+        params[:locale]   ||= config.locale if params.has_key?(:locale)
 
         params.delete_if{ |_, v| v == nil }
 
-        values = [token] + param_values(sort_params(params))
-        signature = Digest::MD5.hexdigest values.join(':')
-        params[:signature] = signature
+        params[:signature] = signature(params)
 
-        headers  = {
-          x_access_token: token,
-          accept_encoding: 'gzip, deflate',
-          accept: :json,
-          content_type: 'application/json'
-        }
-
-        return respond RestClient.post url, params.to_json, headers if method == :post
-        respond RestClient.get url, headers.merge(params: params)
-      rescue RestClient::Exception => e
-        err = Error.new(e.response, e.http_code)
-        err.message = e.message
-        raise err
+        run_request(url, params, request_headers(true), method)
       end
 
       def signed_hotel_request(method, url, params)
-        params[:lang] ||= config.locale if params.has_key?(:lang)
+        params[:marker]   = config.marker
         params[:currency] ||= config.currency
+        params[:lang]     ||= config.locale if params.has_key?(:lang)
 
         params.delete_if{ |_, v| v == nil }
 
-        values = [config.token, config.marker] + param_values(sort_params(params))
-        signature = Digest::MD5.hexdigest values.join(':')
-        params[:signature] = signature
-        params[:marker] = config.marker
+        params[:signature] = signature(params, config.marker)
 
-        headers  = {
-          x_access_token: config.token,
-          accept_encoding: 'gzip, deflate',
-          accept: :json,
-          content_type: 'application/json'
-        }
-
-        return respond RestClient.post url, params.to_json, headers if method == :post
-        respond RestClient.get url, headers.merge(params: params)
-
-      rescue RestClient::Exception => e
-        err = Error.new(e.response, e.http_code)
-        err.message = e.message
-        raise err
+        run_request(url, params, request_headers(true), method)
       end
 
       def sort_params(params)
@@ -91,6 +55,22 @@ module TravelPayouts
         params.map{|p| param_values(p)}.flatten
       end
 
+      def signature(params, marker=nil)
+        sign = marker ? [config.token, marker] : [config.token]
+        values = sign + param_values(sort_params(params))
+        Digest::MD5.hexdigest values.join(':')
+      end
+
+      def request_headers(include_content_type = false)
+        {
+          x_access_token: config.token,
+          accept_encoding: 'gzip, deflate',
+          accept: :json
+        }.tap do |headers|
+          headers[:content_type] = 'application/json' if include_content_type
+        end
+      end
+
       def respond(resp)
         begin
           hash = JSON.parse(resp)
@@ -99,6 +79,15 @@ module TravelPayouts
         end
 
         convert_to_mash hash
+      end
+
+      def run_request(url, params, headers, method)
+        return respond RestClient.post url, params.to_json, headers if method == :post
+        respond RestClient.get url, headers.merge(params: params)
+      rescue RestClient::Exception => e
+        err = Error.new(e.response, e.http_code)
+        err.message = e.message
+        raise err
       end
 
       def convert_to_mash(hash)
