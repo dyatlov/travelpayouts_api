@@ -19,7 +19,7 @@ module TravelPayouts
       end
 
       def signed_flight_request(method, url, params)
-        params[:marker]   = config.marker
+        params[:marker]   = config.marker.to_s
         params[:host]     = config.host
         params[:currency] ||= config.currency
         params[:locale]   ||= config.locale if params.has_key?(:locale)
@@ -32,7 +32,7 @@ module TravelPayouts
       end
 
       def signed_hotel_request(method, url, params)
-        params[:marker]   = config.marker
+        params[:marker]   = config.marker.to_s
         params[:currency] ||= config.currency
         params[:lang]     ||= config.locale if params.has_key?(:lang)
 
