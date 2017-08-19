@@ -65,15 +65,15 @@ module TravelPayouts
       end
 
       def hotel_countries
-        signed_hotel_request :get, hotel_countries_url, {}
+        unsigned_hotel_request :get, hotel_countries_url, {}
       end
 
       def hotel_locations
-        signed_hotel_request :get, hotel_locations_url, {}
+        unsigned_hotel_request :get, hotel_locations_url, {}
       end
 
       def hotel_amenities
-        signed_hotel_request :get, hotel_amenities_url, {}
+        unsigned_hotel_request :get, hotel_amenities_url, {}
       end
 
       def hotels_list(location_id:)
@@ -81,11 +81,11 @@ module TravelPayouts
       end
 
       def hotel_room_types
-        signed_hotel_request :get, hotel_room_types_url, {}
+        unsigned_hotel_request :get, hotel_room_types_url, {}
       end
 
       def hotel_types
-        signed_hotel_request :get, hotel_types_url, {}
+        unsigned_hotel_request :get, hotel_types_url, {}
       end
 
       def hotel_search_start(city_id:nil,hotel_id:nil,iata:nil,check_in:,check_out:,adults_count:,user_ip:,
