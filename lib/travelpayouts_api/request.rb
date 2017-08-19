@@ -42,6 +42,11 @@ module TravelPayouts
 
         run_request(url, params, request_headers(true), method)
       end
+      
+      def unsigned_hotel_request(method, url, params)
+        params[:token]   = config.token.to_s
+        run_request(url, params, request_headers(true), method)
+      end
 
       def sort_params(params)
         return params unless params.is_a?(Hash) || params.is_a?(Array)
